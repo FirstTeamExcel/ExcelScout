@@ -24,13 +24,11 @@
         </Grid.RowDefinitions>
 
         <Label Grid.Row="0" Grid.Column="0" Content="Team Number:"/>
-        <TextBox Grid.Row="0" Grid.Column="1" Text="1234"/>
-        <Label Grid.Row="1" Grid.Column="0" Content="Team Number:"/>
-        <TextBox Grid.Row="1" Grid.Column="1" Text="1234"/>
+        <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding Number,UpdateSourceTrigger=PropertyChanged}"/>
         
         <Label Grid.Row="2" Grid.Column="0" Content="Favorite Color:"/>
         <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding FavoriteColor, Source={StaticResource ColorExample}}"/>
         <Label Grid.Row="3" Grid.Column="0" Content="Favorite Color:"/>
-        <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding FavoriteColor, Source={StaticResource ColorExample}}"/>
+        <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding FavoriteColor, Source={StaticResource ColorExample},UpdateSourceTrigger=PropertyChanged}"/>
     </Grid>
 </UserControl>

@@ -1,8 +1,15 @@
 ﻿<Window x:Class="ExcelScout.MainWindow"
+    xmlns:vm="clr-namespace:ExcelScout.ViewModel"
+    xmlns:view="clr-namespace:ExcelScout.View"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="clr-namespace:ExcelScout.View"
     Title="MainWindow" Height="350" Width="525">
+    <Window.Resources>
+        <vm:TeamViewModel x:Key="TeamTest">
+            
+        </vm:TeamViewModel>
+    </Window.Resources>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
@@ -11,10 +18,10 @@
         <Label>Hello</Label>
         <TabControl Grid.Row="1">
             <TabItem Header="Robot Information">
-                <local:RobotInfoView/>
+                <local:RobotInfoView DataContext="{StaticResource TeamTest}"/>
             </TabItem>
-            <TabItem Header="Headings are cool.">
-                <Label Content="3"/>
+            <TabItem Header="Team">
+                <view:TeamView DataContext="{StaticResource TeamTest}"/> 
             </TabItem>
         </TabControl>
     </Grid>
